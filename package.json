@@ -6,9 +6,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-regular-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "classname": "^0.0.0",
+    "classnames": "^2.3.2",
+    "font": "^0.0.4",
     "next": "latest",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-google-autocomplete": "^2.7.0",
+    "react-window": "^1.8.7"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
