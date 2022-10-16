@@ -164,3 +164,53 @@ body {
         transform: translate3d(0, 0, 0) translateZ(0);
     }
 }
+
+/* THE 4 BLOCKS */
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.div3 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.div4 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.blocks_one_color {
+    background-image: linear-gradient(155deg, #e93030, #e93030);
+}
+
+.blocks_one_color:hover {
+    background-image: linear-gradient(155deg, #d4b1b1, #6b1d1d);
+}
+
+.blocks_two_color {
+    background-image: linear-gradient(205deg, #e93030, #e93030);
+}
+
+.blocks_three_color {
+    background-image: linear-gradient(25deg, #e93030, #e93030);
+}
+
+.blocks_four_color {
+    background-image: linear-gradient(335deg, #e93030, #e93030);
+}
+
+/* MP4 */
+video {
+    object-fit: cover;
+}

@@ -21,8 +21,11 @@ const Button = ({
       variant === "secondary",
     "bg-white font-normal border border-gray-200 hover:border-gray-300 hover:bg-gray-100":
       variant === "empty",
-    "text-white bg-[#df1515] border border-transparent hover:bg-red-800	font-normal":
+    "text-white bg-[#df1515] border border-red-500 hover:bg-white hover:text-[#df1515] font-normal":
       variant === "tertiary",
+
+    "text-[#df1515] bg-white border border-red-500 hover:bg-[#df1515] hover:text-white font-normal":
+      variant === "quaternary",
 
     "px-2 md:px-6 py-2 text-lg leading-6": size === "normal" && !hasLink,
     "px-2 md:px-4 py-1 text-sm leading-6": size === "small" && !hasLink,
