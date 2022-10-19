@@ -2,6 +2,7 @@ import NavBar from "../components/NavBar/NavBar.js";
 import Blocks from "../components/Blocks.js";
 import classnames from "classnames";
 import Video from "../components/Video.js";
+import Description_Bloc from "../components/Description_Bloc.js";
 
 export default function Home() {
   const container = classnames(
@@ -20,9 +21,13 @@ export default function Home() {
           <Blocks />
         </div>
         {/* MP4 */}
-        <div className="w-full">
+        <div className="w-full flex justify-center items-center">
           <Video ruta_video={require("../public/videos/bicing_video.mp4")} />
         </div>
+      </div>
+      {/* DESCRIPTION BLOC */}
+      <div>
+        <Description_Bloc />
       </div>
     </div>
   );

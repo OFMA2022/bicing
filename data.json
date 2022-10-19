@@ -1,0 +1,356 @@
+[
+  {
+    "name": "DISA Sagrada Familia",
+    "id": "01",
+    "slug": "DisaSagradaFamilia",
+    "image": "/images/disa-sf.jpeg",
+    "address": "Carrer de Nàpols 171",
+    "phoneNumber": "932313998",
+    "web": "//caritas.barcelona/es/ayuda-a-necesidades-basicas/disa-sagrada-familia/",
+    "days": "De Lunes a Viernes",
+    "timetable": "10:00 – 12:30",
+    "categories": ["alimentos"],
+    "information": "DISA Sagrada Família es un punto de distribución de alimentos para atender a personas y familias que se encuentran en una situación económica débil que no les permite cubrir sus necesidades básicas en alimentación. Desde aquí, se distribuyen alimentos y productos de primera necesidad de forma gratuita.",
+    "direction": {
+      "lat": 41.3973002,
+      "lng": 2.1736564
+    }
+  },
+  {
+    "name": "DISA Rebost solidari de Sant Andreu",
+    "id": "02",
+    "slug": "DisaSantAndreu",
+    "image": "/images/disasa.png",
+    "address": "Carrer de Berenguer de Palou",
+    "phoneNumber": "934082291",
+    "web": "https://caritas.barcelona/es/ayuda-a-necesidades-basicas/rebost-solidari-sant-andreu/",
+    "days": "De Lunes a Viernes",
+    "timetable": "9:00 – 13:00",
+    "categories": ["alimentos"],
+    "information": "El Rebost solidari Sant Andreu provee de alimentos y productos de higiene a familias y personas de los barrios de San Andrés de Palomar, La Sagrera y El Buen Pastor de Barcelona para evitar su exclusión social y poder cubrir las necesidades básicas alimenticias.",
+    "direction": {
+      "lat": 41.42721376053423,
+      "lng": 2.1917325329780986
+    }
+  },
+  {
+    "name": "Banc de Recursos Barcelona",
+    "id": "03",
+    "slug": "Banc-Recursos-Bcn",
+    "image": "/images/banc-recursos.png",
+    "address": "Carrer Gran de Gràcia 167, Principal 2ª",
+    "phoneNumber": "932177154",
+    "web": "http://www.pontalimentari.org/",
+    "days": "De Lunes a Viernes",
+    "timetable": "10:00 – 15:00",
+    "categories": ["alimentos"],
+    "information": "BdR es una entidad social y medioambiental de voluntariado especializada en la reutilización de recursos y en el aprovechamiento alimentario. Gestionamos ofertas de materiales, equipamientos y alimentos (frescos y cocinados) de empresas y organizaciones y los redistribuimos a entidades sociales que atienden a colectivos necesitados de nuestro país y del Sur para reducir el desperdicio y fomentar la justicia social.",
+    "direction": {
+      "lat": 41.40307524560708,
+      "lng": 2.1523282285479612
+    }
+  },
+  {
+    "name": "Banc dels Aminets",
+    "id": "04",
+    "slug": "Banc-Aminets",
+    "image": "/images/banc-alimentos.png",
+    "address": "Carrer de Motors 122",
+    "phoneNumber": "933464404",
+    "web": "https://www.bancdelsaliments.org/es/",
+    "days": "De Lunes a Viernes",
+    "timetable": "9:00 – 13:00",
+    "categories": ["alimentos"],
+    "information": "El Banc dels Aliments de Barcelona es una fundación independiente, apolítica, aconfesional y sin ánimo de lucro, que tiene como objetivos principales luchar contra el despilfarro, recuperando excedentes alimentarios aptos para el consumo humano, y luchar contra la pobreza , haciendo llegar los alimentos recuperados a personas en situación deprecariedad alimentaria de nuestro entorno.",
+    "direction": {
+      "lat": 41.35083185755591,
+      "lng": 2.1451825243710845
+    }
+  },
+  {
+    "name": "Fundació Temps i Compromís",
+    "id": "045",
+    "slug": "Fundacio-Temps-Compromis",
+    "image": "/images/compromiso.png",
+    "address": "Carrer del Trèvol 9-19",
+    "phoneNumber": "934209517",
+    "web": "https://www.tempsicompromis.org/es/contacto.html",
+    "categories": ["alimentos"],
+    "information": "Somos una fundación cristiana nacida en el año 2006 con el fin de contribuir al fortalecimiento de los valores cívicos, sociales y de convivencia, todo ello a través de las relaciones personales y la realización de actividades.",
+    "direction": {
+      "lat": 41.42680944749885,
+      "lng": 2.1674844262287714
+    }
+  },
+  {
+    "name": "DISA Sant Josep Oriol",
+    "id": "05",
+    "slug": "DisaSantJosep",
+    "image": "/images/disasjo.png",
+    "address": "Carrer del Comte d’Urgell 176",
+    "phoneNumber": "930026243",
+    "web": "https://caritas.barcelona/es/ayuda-a-necesidades-basicas/disa-sant-josep-oriol/",
+    "days": "De Lunes a Viernes",
+    "timetable": "9:30 – 13:30",
+    "categories": ["alimentos"],
+    "information": "El DISA Sant Josep Oriol es un centro de distribución de alimentos que Cáritas arciprestal organiza para que familias y personas que tienen bajos ingresos mensuales puedan adquirir alimentos y cubrir sus necesidades básicas.",
+    "direction": {
+      "lat": 41.38714544941065,
+      "lng": 2.1522677777951165
+    }
+  },
+  {
+    "name": "Cáritas",
+    "id": "06",
+    "slug": "Caritas",
+    "image": "/images/caritas-fundacion.png",
+    "address": "Via Laietana 5, Entresuelo",
+    "phoneNumber": "933446900",
+    "web": "https://caritas.barcelona/es/",
+    "days": "De Lunes a Sábado",
+    "timetable": "8:00 – 15:00",
+    "categories": ["ropa", "muebles", "alimentos"],
+    "information": "Cáritas se centra en cubrir las necesidades básicas de las personas a través del programa de ayuda a las necesidades básicas. Pero tú también puedes ayudarnos a ayudar y mejorar las condiciones de vida de las personas atendidas. Si quieres aportar tu grano de arena, puedes colaborar ofreciendo ropa, alimentos y artículos de segunda mano en los centros distribuidores.",
+    "direction": {
+      "lat": 41.3839762,
+      "lng": 2.1291988
+    }
+  },
+  {
+    "name": "Socialfooding",
+    "id": "07",
+    "slug": "Socialfooding",
+    "image": "/images/socialfooding.png",
+    "address": "Calle d’Alí Beí 29, Entresuelo 2ª",
+    "phoneNumber": "930026243",
+    "web": "http://socialfooding.org/es/",
+    "categories": ["alimentos"],
+    "information": "Somos una Fundación que tiene como objetivo ayudar a la gente que pasa hambre en Barcelona. Trabajamos mano a mano con las ONGs para conseguir este propósito. Nuestra finalidad es reducir el hambre, además, cooperamos para que los excedentes alimentarios de nuestros colaboradores no acaben en la basura.",
+    "direction": {
+      "lat": 41.39249709042172,
+      "lng": 2.1782783477751178
+    }
+  },
+  {
+    "name": "Almacén del Banco de Alimentos en Mercabarna",
+    "id": "08",
+    "slug": "Alimentos-Mercabarna",
+    "image": "/images/mercabarna.jpeg",
+    "address": "Carrer Transversal 1, nº41",
+    "phoneNumber": "935561033",
+    "web": " https://www.mercabarna.es/responsabilitat-social/es_banc-dels-aliments/",
+    "days": "De Lunes a Viernes",
+    "timetable": "7:00 – 17:00",
+    "categories": ["alimentos"],
+    "information": "Mercabarna es el principal mercado mayorista de alimentos frescos de Europa en volumen de comercialización. Funciona como una ciudad alimentaria las 24 horas del día con el objetivo de garantizar el aprovisionamiento de alimentos frescos a los ciudadanos. En su recinto concentra 600 empresas especializadas en la distribución, elaboración, importación y exportación de productos frescos y congelados Desde 2002, el Banco de Alimentos dispone de un almacén dentro de Mercabarna, cedido por la dirección de este polígono alimentario y ampliado a finales de 2015, que sirve como centro de recogida, selección y distribución de los alimentos frescos excedentarios que dan voluntariamente las empresas del recinto.",
+    "direction": {
+      "lat": 41.33357289314409,
+      "lng": 2.1193137396540584
+    }
+  },
+  {
+    "name": "Raval solidari",
+    "id": "09",
+    "slug": "Raval-Solidari",
+    "image": "/images/raval.png",
+    "address": "Carrer de Guifré 4",
+    "phoneNumber": "933019904",
+    "web": "https://ravalsolidari.org//",
+    "days": "De Lunes a Viernes",
+    "timetable": "10:00 – 14:00 (L a J) 10:00 – 14:00 (V)",
+    "categories": ["alimentos"],
+    "information": "la Fundació Raval Solidari nace de las inquietudes sociales de un grupo de personas con muchos años de dedicación a tareas de voluntariado en torno a la acción social de la iglesia de Montalegre, en el barrio del Raval de Barcelona. Desde 1 de octubre de 2021, se convierte en la Fundación Paulino Torras Raval Solidari, al fusionarse con esta otra fundación, constituida en el año 1970 con el objeto fundacional de realizar, principalmente en Cataluña, ayudas económicas y actividades de carácter benéfico, docente y cultural.",
+    "direction": {
+      "lat": 41.38173543077161,
+      "lng": 2.1664615127363898
+    }
+  },
+
+  {
+    "name": "Botiga Amiga Clot - Fundació Formació i Treball",
+    "id": "10",
+    "slug": "Botiga-Amiga",
+    "image": "/images/treball.png",
+    "address": "Carrer de Sibelius 9",
+    "phoneNumber": "932452688",
+    "web": "https://www.formacioitreball.org/es/colabora/consumo-responsable/",
+    "days": "De Lunes a Sábado",
+    "timetable": "10:30 – 20:30",
+    "categories": ["ropa"],
+    "information": "El origen lo encontramos en el año 1986 cuando Cáritas Diocesana de Barcelona, a través de una educadora y la ayuda de jóvenes voluntarias, inició la coordinación de cuatro mujeres en situación de vulnerabilidad para gestionar la selección de la ropa que llegaba a las parroquias y su posterior entrega a familias que solicitaban asistencia. Asentadas las bases, el año 1992 Cáritas constituyó la Fundación Formació i Treball con los objetivos de formar e inserir laboralmente personas en riesgo de exclusión social y gestionar la entrega de ropa, muebles y otros equipamientos del hogar a familias vulnerables derivadas de la propia Cáritas y de los diferentes Servicios Sociales de Barcelona.",
+    "direction": {
+      "lat": 41.4103674,
+      "lng": 2.1831766
+    }
+  },
+  {
+    "name": "Humana Meridiana",
+    "id": "11",
+    "slug": "Humana-Meridiana",
+    "image": "/images/humana.png",
+    "address": "Avinguda Meridiana 314",
+    "phoneNumber": "933407135",
+    "web": "https://www.humana-spain.org/",
+    "days": "De Lunes a Sábado",
+    "timetable": "10:00 – 21:00",
+    "categories": ["ropa"],
+    "information": "Humana Fundación Pueblo para Pueblo promueve desde 1987 la protección del medio ambiente a través de la reutilización de textil y lleva a cabo programas de cooperación internacional al desarrollo en África, América Latina y Asia y de apoyo local, sensibilización y agricultura urbana en España. Tras 35 años de actividad, Humana se ha consolidado como actor relevante de la economía social, impulsor de la economía circular y generador de empleo verde.",
+    "direction": {
+      "lat": 41.424155022644186,
+      "lng": 2.187135799126374
+    }
+  },
+  {
+    "name": "Humana Para-lel",
+    "id": "12",
+    "slug": "Humana-Para-lel",
+    "image": "/images/humana.png",
+    "address": "Av. del Paral·lel 85",
+    "phoneNumber": "934431575",
+    "web": "https://www.humana-spain.org/",
+    "days": "De Lunes a Domingo",
+    "timetable": "10:00 – 21:00 (L – S) 12:00 – 20:00 (D)",
+    "categories": ["ropa"],
+    "information": "Humana Fundación Pueblo para Pueblo promueve desde 1987 la protección del medio ambiente a través de la reutilización de textil y lleva a cabo programas de cooperación internacional al desarrollo en África, América Latina y Asia y de apoyo local, sensibilización y agricultura urbana en España. Tras 35 años de actividad, Humana se ha consolidado como actor relevante de la economía social, impulsor de la economía circular y generador de empleo verde.",
+    "direction": {
+      "lat": 41.374784727017555,
+      "lng": 2.166170498524559
+    }
+  },
+  {
+    "name": "Humana Gracia",
+    "id": "13",
+    "slug": "Humana-Gracia",
+    "image": "/images/humana.png",
+    "address": "Travessera de Gràcia 80",
+    "phoneNumber": "936243997",
+    "web": "https://www.humana-spain.org/",
+    "days": "De Lunes a Sábado",
+    "timetable": "10:00 – 21:00",
+    "categories": ["ropa"],
+    "information": "Humana Fundación Pueblo para Pueblo promueve desde 1987 la protección del medio ambiente a través de la reutilización de textil y lleva a cabo programas de cooperación internacional al desarrollo en África, América Latina y Asia y de apoyo local, sensibilización y agricultura urbana en España. Tras 35 años de actividad, Humana se ha consolidado como actor relevante de la economía social, impulsor de la economía circular y generador de empleo verde.",
+    "direction": {
+      "lat": 41.39733165157227,
+      "lng": 2.151674564531787
+    }
+  },
+  {
+    "name": "Zara Plaza Catalunya",
+    "id": "14",
+    "slug": "Zara-PlCatalunya",
+    "image": "/images/zara.png",
+    "address": "Pl. de Catalunya 5",
+    "phoneNumber": "934815004",
+    "web": "https://www.zara.com/es/es/sostenibilidad-programa-de-recogida-mkt1452.html",
+    "days": "De Lunes a Domingo",
+    "timetable": "10:00 – 22:00 (L a S) 12:00 - 20:00 (D) ",
+    "categories": ["ropa"],
+    "information": "Nuestro programa de recogida de ropa usada te permite depositar la ropa que ya no utilizas en los contenedores que encontrarás en nuestras tiendas o, en aquellos mercados en los que está disponible, solicitar el servicio de recogida de donaciones que ofrecemos a nuestros clientes online. nosotros nos encargamos de hacer llegar las prendas donadas a las organizaciones con las que colaboramos, que se encargan de darles una nueva vida y apoyar el desarrollo de proyectos en tu comunidad.",
+    "direction": {
+      "lat": 41.44080025133636,
+      "lng": 2.1985990473176558
+    }
+  },
+  {
+    "name": "Zara Maquinista",
+    "id": "15",
+    "slug": "Zara-Maquinista",
+    "image": "/images/zara.png",
+    "address": "Carrer de Potosí 2",
+    "phoneNumber": "933608178",
+    "web": "https://www.zara.com/es/es/sostenibilidad-programa-de-recogida-mkt1452.html",
+    "days": "De Lunes a Sábado",
+    "timetable": "9:30 – 22:00",
+    "categories": ["ropa"],
+    "information": "Nuestro programa de recogida de ropa usada te permite depositar la ropa que ya no utilizas en los contenedores que encontrarás en nuestras tiendas o, en aquellos mercados en los que está disponible, solicitar el servicio de recogida de donaciones que ofrecemos a nuestros clientes online. nosotros nos encargamos de hacer llegar las prendas donadas a las organizaciones con las que colaboramos, que se encargan de darles una nueva vida y apoyar el desarrollo de proyectos en tu comunidad.",
+    "direction": {
+      "lat": 41.44080025133636,
+      "lng": 2.1985990473176558
+    }
+  },
+  {
+    "name": "Casal Dels Infants A.S.B.",
+    "id": "16",
+    "slug": "Casal-Dels-Infants",
+    "image": "/images/casa-infantes.png",
+    "address": "Carrer de la Junta de Comerç 16,",
+    "phoneNumber": "933170013",
+    "web": "http://www.casaldelsinfants.org/",
+    "days": "De Lunes a Viernes",
+    "timetable": "9:00 - 14:00 y 15:00 - 18:00",
+    "categories": ["juguetes"],
+    "information": "Desde 1983, apoyamos a los niños y jóvenes en riesgo de exclusión en nuestra sociedad. Convencidos y convencidas de que, por dura que sea su realidad, pueden superar la desigualdad, aprovechar las oportunidades y salir adelante, si reciben el apoyo y el acompañamiento que necesitan.",
+    "direction": {
+      "lat": 41.379737225448274,
+      "lng": 2.17146496989996
+    }
+  },
+  {
+    "name": "COMPARTE Y RECICLA",
+    "id": "17",
+    "slug": "Comparte-y-recicla",
+    "image": "/images/comparte.png",
+    "address": "Calle Muntaner 9, Local 1",
+    "phoneNumber": "938089957",
+    "web": "https://www.comparteyrecicla.com/",
+    "days": "De Lunes a Viernes",
+    "timetable": "9:00 - 14:00 y 15:30 - 18:30, viernes hasta las 18:00",
+    "categories": ["juguetes"],
+    "information": "Una acción solidaria que tiene por objetivo la recogida de juguetes para su donación a organizadores benéficas españolas. Del 17 de junio al 10 de julio de 2022 podrás entregar tus juguetes en El Corte Inglés, Hipercor, Supercor y Toys R Us. Comparte y Recicla se basa en la donación de juguetes que realizan las niñas y niños para que otros niños puedan disfrutar con ellos.",
+    "direction": {
+      "lat": 41.383948725673534,
+      "lng": 2.1627053778821588
+    }
+  },
+  {
+    "name": "FUNDACIÓN ENGRUNES",
+    "id": "18",
+    "slug": "FUNDACION-ENGRUNES",
+    "image": "/images/engrunen.png",
+    "address": "Carrer de Mallorca 467",
+    "phoneNumber": "933474669",
+    "web": "https://engrunes.org/es/",
+    "days": "De Lunes a Sábados",
+    "timetable": "10:00 - 13:45 y 17:00 - 20:00 (L a V) 10:00 - 14:00(S)",
+    "categories": ["muebles"],
+    "information": "La Fundación Engrunes es una entidad privada sin ánimo de lucro, siendo el objeto social proporcionar a las personas en riesgo de exclusión social o excluidas, apoyo personal, un trabajo retribuido que les permita reincorporarse nuevamente a una vida social y laboral activa y utilizando como herramientas su propio trabajo y el esfuerzo personal. Nuestra actividad está centrada en los mercados de la construcción y de la gestión medioambiental, trabajando principalmente en la provincia de Barcelona y más centralizada en el Área Metropolitana de Barcelona.",
+    "direction": {
+      "lat": 41.40658181889325,
+      "lng": 2.179342663913006
+    }
+  },
+  {
+    "name": "SOLIDANÇA TREBALL E.I, SL.",
+    "id": "19",
+    "slug": "Solidanca-treball",
+    "image": "/images/solidanza.png",
+    "address": "C/ Treball 5",
+    "phoneNumber": "936854434",
+    "web": "http://google.com",
+    "days": "De Lunes a Viernes",
+    "timetable": "8:00 - 19:00, Viernes hasta las 15:00",
+    "categories": ["muebles"],
+    "information": "Solidança es una entidad sin ánimo de lucro nacida en el año 1997 con el objetivo de construir una sociedad más justa, solidaria y respetuosa con el medio ambiente. Para lograr este objetivo, la entidad busca fórmulas innovadoras que permitan aportar nuevas propuestas de integración sociolaboral para colectivos en riesgo de exclusión y ofrece servicios de calidad vinculados a la gestión integral de residuos y a la economía circular.",
+    "direction": {
+      "lat": 41.378864180071844,
+      "lng": 2.0676718
+    }
+  },
+  {
+    "name": "REMAR",
+    "id": "20",
+    "slug": "REMAR",
+    "image": "/images/remar.png",
+    "address": "Av. del Paral·lel 97",
+    "phoneNumber": "937713555",
+    "web": "http://www.remar.org/",
+    "days": "De Lunes a Sábados",
+    "timetable": "9:00 - 14:00 y 16:00 - 20:00 (L a V) 9:00 - 14:00 (S)",
+    "categories": ["muebles"],
+    "information": "Somos una ONGD con fundamentos cristianos que comienza su labor en España en 1982, creada para ayudar, promocionar y desarrollar a las personas en situación de exclusión social contamos con una experiencia de más de 38 años en la lucha contra la injusticia, la adicción a las drogas, seguridad alimentaria, cobertura de necesidades básicas, salud, educación, violencia familiar y de género. Trabajamos en 70 países gracias a la ayuda de Dios y al apoyo de miles de colaboradores voluntarios que dedican sus vidas al servicio de otros.",
+    "direction": {
+      "lat": 41.37485016756914,
+      "lng": 2.1638675968186325
+    }
+  }
+]

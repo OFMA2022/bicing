@@ -5,7 +5,7 @@
 html,
 body {
     padding: 0;
-    margin: 0;
+    margin: 5px;
     font-family: "Nunito";
     font-weight: 400;
 }
@@ -85,7 +85,7 @@ body {
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
 
-/*  BUTTON : Buscar */
+/*  BUTTON --> BUSCAR */
 
 .bn54 {
     position: relative;
@@ -194,10 +194,6 @@ body {
     background-image: linear-gradient(155deg, #e93030, #e93030);
 }
 
-.blocks_one_color:hover {
-    background-image: linear-gradient(155deg, #d4b1b1, #6b1d1d);
-}
-
 .blocks_two_color {
     background-image: linear-gradient(205deg, #e93030, #e93030);
 }
@@ -210,7 +206,62 @@ body {
     background-image: linear-gradient(335deg, #e93030, #e93030);
 }
 
+.blocks_one_color:hover,
+.blocks_two_color:hover,
+.blocks_three_color:hover,
+.blocks_four_color:hover {
+    transform: rotate(0) scale(0.8) translateZ(0);
+    -webkit-filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.70));
+    filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.70));
+}
+
+/*.blocks_hover:hover {
+    transform: rotate(0) scale(1.2) translateZ(0);
+    -webkit-filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.70));
+    filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.70));
+}*/
+
 /* MP4 */
 video {
     object-fit: cover;
+}
+
+/* DESCRIPTION BLOC --> BUTTON*/
+.bn632-hover {
+    width: 160px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.bn632-hover:hover {
+    background-position: 100% 0;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.bn632-hover:focus {
+    outline: none;
+}
+
+.bn632-hover.bn27 {
+    background-image: linear-gradient(to right,
+            #ed6ea0,
+            #ec8c69,
+            #f7186a,
+            #fbb03b);
+    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
 }

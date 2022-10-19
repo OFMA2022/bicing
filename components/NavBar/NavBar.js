@@ -12,7 +12,7 @@ function NavBar() {
   return (
     <nav className="flex justify-between items-center p-4 md:px-12 md:py-6">
       {/* LOGO */}
-      <div className="font-satisfy text-logo px-1 logo font-bold">
+      <div className="hidden sm:inline-flex font-satisfy text-logo px-1 logo font-bold">
         <Link href="/">
           <a>Bicing</a>
         </Link>

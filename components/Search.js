@@ -17,15 +17,16 @@ function Search() {
   }
   const handlePlaceSelected = (place) => {
     const lat = place.geometry.location.lat();
-    const lng = place.geometry.location.lng();
-    const route = place.address_components.find((a) =>
+    const lon = place.geometry.location.lng();
+    const route_address = place.address_components.find((a) =>
       a.types.includes("route")
     )?.long_name;
     const street_number = place.address_components.find((a) =>
       a.types.includes("street_number")
     )?.long_name;
-    //console.log("THE ROUTE", lat, lng, route, street_number);
-    setDirection({ lat, lng, route, street_number });
+    //console.log("place", place);
+    //console.log("THE route_address", lat, lon, route_address, street_number);
+    setDirection({ lat, lon, route_address, street_number });
   };
 
   return (
@@ -33,28 +34,25 @@ function Search() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          router.push({ pathname: "/", query: direction });
-          // TODO: Do the search and redirect to the correct page.
-          // Use the direction state, to redirect the user to the correct page.
+          if (direction) {
+            router.push({ pathname: "/stations_list", query: direction });
+            // TODO: Do the search and redirect to the correct page.
+            // Use the direction state, to redirect the user to the correct page.
+          }
         }}
         className="flex justify-between gap-2 w-full h-full"
       >
         {/* INPUT BUTTON */}
-        <div className="search-box">
-          <button className="btn-search">
-            <i className="fas fa-search"></i>
-          </button>
-          <AutoComplete
-            apiKey={GOOGLE_API_KEY}
-            onPlaceSelected={handlePlaceSelected}
-            className="input-search"
-            //placeholder="Type to Search..."
-            options={{
-              types: ["address"],
-              componentRestrictions: { country: "es" },
-            }}
-          />
-        </div>
+        <AutoComplete
+          apiKey={GOOGLE_API_KEY}
+          onPlaceSelected={handlePlaceSelected}
+          className="rounded-lg px-2 py-1  w-full border border-solid border-gray-200  transition ease-in-out focus:border-red-600 focus:outline-none"
+          //placeholder="Type to Search..."
+          options={{
+            types: ["address"],
+            componentRestrictions: { country: "es" },
+          }}
+        />
         {/* SEARCH BUTTON */}
         <button className=" bn54">
           <span className="bn54span">Buscar</span>
