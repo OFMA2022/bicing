@@ -25,7 +25,7 @@ function Blocks() {
           </Link>
         </div>
         <div className="div2">
-          <Link href="/">
+          <Link href="../stations_list">
             <a className={categoryClass + " blocks_two_color"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
