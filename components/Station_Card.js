@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { color } from "@mui/system";
 import ConditionFile from "./ConditionFile";
+import Station_Card_Button from "./Station_Card_Buttons";
 
 export default function Station_Card({
   address,
@@ -21,17 +22,21 @@ export default function Station_Card({
 }) {
   return (
     <Card sx={{ maxWidth: 650 }}>
-      <Image
-        width="100%"
-        height="50%"
-        objectFit="cover"
-        layout="responsive"
-        objectPosition="center"
-        src={require("../public/images/bike.png")}
-        style={{
-          objectPosition: "center",
-        }}
-      />
+      <Link href="/">
+        <a>
+          <Image
+            width="100%"
+            height="50%"
+            objectFit="cover"
+            layout="responsive"
+            objectPosition="center"
+            src={require("../public/images/bike.png")}
+            style={{
+              objectPosition: "center",
+            }}
+          />
+        </a>
+      </Link>
       <CardContent>
         {/* ADDRESS */}
         <Typography
@@ -91,8 +96,8 @@ export default function Station_Card({
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        {/* SHARE AND CUSTOMER SERVICE BOTTON*/}
+        <Station_Card_Button />
       </CardActions>
     </Card>
   );

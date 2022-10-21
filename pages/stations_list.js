@@ -3,6 +3,7 @@ import data_status from "../data_status.json";
 import NavBar from "../components/NavBar/NavBar";
 import Station_Card from "../components/Station_Card";
 import { useState } from "react";
+import FloatingButton_BackTop from "../components/FloatingButton_BackTop";
 
 /* EXTERNAL DATA JSON LINK : DATA INFORMATION (FIRST JSON FILE) */
 const API_URL_DATA_INFO =
@@ -43,7 +44,7 @@ function list(stations, address) {
       </div>
 
       {/* STATIONS */}
-      {stations ? (
+      {stations.stations != "" ? (
         <div className="max-w-[1000px] px-4 md:px-12 md:py-6 flex flex-col gap-4">
           {stations.stations?.map((station, i) => (
             <Station_Card
@@ -63,11 +64,12 @@ function list(stations, address) {
         </div>
       ) : (
         <div className="flex h-[calc(100vh-108px)] w-full justify-center items-center">
-          <div className="font-bold">
-            Lo sentimos, no se encuentran estaciones cercanas
+          <div className="font-bold text-2xl">
+            Lo sentimos, no se encuentran estaciones cercanas.
           </div>
         </div>
       )}
+      <FloatingButton_BackTop />
     </div>
   );
 }
