@@ -54,7 +54,7 @@ function Search() {
           }}
         />
         {/* SEARCH BUTTON */}
-        <button className=" bn54">
+        <button className="bn54">
           <span className="bn54span">Buscar</span>
         </button>
       </form>

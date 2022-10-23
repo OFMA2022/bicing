@@ -2,7 +2,6 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,10 +18,11 @@ export default function Station_Card({
   ebike,
   muelles_bicis_disponibles,
   estado,
+  station_id,
 }) {
   return (
     <Card sx={{ maxWidth: 650 }}>
-      <Link href="/">
+      <Link href={`/station_map/${station_id}`}>
         <a>
           <Image
             width="100%"
@@ -45,7 +45,7 @@ export default function Station_Card({
           component="div"
           className="hover:text-red-500"
         >
-          <Link href={"/"}>
+          <Link href={`/station_map/${station_id}`}>
             <a>{address}</a>
           </Link>
         </Typography>
@@ -72,7 +72,7 @@ export default function Station_Card({
           color="text.secondary"
           marginBottom={"10px"}
         >
-          MUELLES DISPONIBLES: {muelles_bicis_disponibles}
+          ANCLAJES DISPONIBLES: {muelles_bicis_disponibles}
         </Typography>
         {/* TYPES OF BIKES AVAILABLE */}
         <Typography variant="body1" color="text.primary" marginBottom={"5px"}>

@@ -3,7 +3,8 @@ import data_status from "../data_status.json";
 import NavBar from "../components/NavBar/NavBar";
 import Station_Card from "../components/Station_Card";
 import { useState } from "react";
-import FloatingButton_BackTop from "../components/FloatingButton_BackTop";
+import ScrollUp_Buton from "../components/ScrollUp_Buton";
+import PreviousPage_Button from "../components/PreviousPage_Button";
 
 /* EXTERNAL DATA JSON LINK : DATA INFORMATION (FIRST JSON FILE) */
 const API_URL_DATA_INFO =
@@ -42,6 +43,10 @@ function list(stations, address) {
       <div className="w-full overflow-x-hidden overflow-y-hidden">
         <NavBar />
       </div>
+      {/*  PREVIOUS PAGE - BACK BOTTOM */}
+      <div className="mr-auto mb-3">
+        <PreviousPage_Button />
+      </div>
 
       {/* STATIONS */}
       {stations.stations != "" ? (
@@ -59,17 +64,21 @@ function list(stations, address) {
               ebike={value[i].num_bikes_available_types.ebike}
               muelles_bicis_disponibles={value[i].num_docks_available}
               estado={value[i].status == "IN_SERVICE" ? "SI" : "NO"}
+              station_id={station.station_id}
             />
           ))}
         </div>
       ) : (
         <div className="flex h-[calc(100vh-108px)] w-full justify-center items-center">
-          <div className="font-bold text-2xl">
+          <div className="font-bold text-2xl text-center">
             Lo sentimos, no se encuentran estaciones cercanas.
           </div>
         </div>
       )}
-      <FloatingButton_BackTop />
+
+      <div className="mr-auto">
+        <ScrollUp_Buton />
+      </div>
     </div>
   );
 }

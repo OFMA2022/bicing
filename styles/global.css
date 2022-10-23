@@ -265,3 +265,44 @@ video {
             #fbb03b);
     box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
 }
+
+/* MAP  */
+.map-container {
+    width: 100%;
+    height: 600px;
+}
+
+.map-container-station {
+    width: 100%;
+    height: 350px;
+}
+
+@media (min-width: 640px) {
+    .map-container-station {
+        width: 100%;
+        height: 350px;
+        margin: 20px;
+        /* top | right | bottom | left */
+    }
+}
+
+/* INFOWINDOWMAPCARD */
+.STATION_IN_SERVICE {
+    width: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #15df1f;
+    color: #fff;
+    font-size: 24px;
+}
+
+.STATION_NOT_IN_SERVICE {
+    width: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #e93030;
+    color: #fff;
+    font-size: 24px;
+}
