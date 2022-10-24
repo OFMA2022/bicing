@@ -50,14 +50,15 @@ class Input extends React.Component {
     console.log("let fuc goooo", lat, lng, street_address, street_number);
     //setDirection({ lat, lng, street_address, street_number });
   }
-  componentDidMount() {
+  //HE COMENTADO ESTO PARA UNA PREUBA. NO ES QUE ESTA MAL EL CODIGO
+  /*componentDidMount() {
     this.autocomplete = new google.maps.places.Autocomplete(
       document.getElementById("autocomplete"),
       {}
     );
 
     this.autocomplete.addListener("place_changed", this.handlePlaceSelect);
-  }
+  }*/
 
   render() {
     return (

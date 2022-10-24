@@ -1,5 +1,5 @@
 import NavBar from "../../components/NavBar/NavBar";
-import Map from "../../components/MyMap";
+import MyMap from "../../components/MyMap";
 import { useLoadScript } from "@react-google-maps/api";
 import data_information from "../../data_information.json";
 import data_status from "../../data_status.json";
@@ -14,7 +14,7 @@ function Mapa({ stationData }) {
     direction: { lat: stationData.lat, lng: stationData.lon },
   };
 
-  const { isLoaded } = useLoadScript({
+  const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
   });
 
@@ -30,17 +30,19 @@ function Mapa({ stationData }) {
         {/* NAVBAR */}
         <NavBar />
       </div>
-      {/* BACKWARD BUTTON */}
       <div>
+        {/* BACKWARD BUTTON */}
         <PreviousPage_Button />
       </div>
-      {/* DESCRIPTION */}
-      <Description_Map />
+      <div>
+        {/* DESCRIPTION */}
+        <Description_Map />
+      </div>
 
       <div className="flex items-center justify-center">
-        {/* MAPA */}
-        {isLoaded != "" ? (
-          <Map
+        {/* MAP */}
+        {!loadError && isLoaded != "" ? (
+          <MyMap
             typeMarker="unique"
             direction={LatLon.direction}
             zoom={20}

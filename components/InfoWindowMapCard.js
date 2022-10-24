@@ -28,7 +28,7 @@ function InfoWindowMapCard({ stations, stations_status }) {
           <div className={container}>{stations_status.num_bikes_available}</div>
         </div>
         <div>
-          {/* ESTACIONES */}
+          {/* ANCLAJES */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="48"

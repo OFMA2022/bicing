@@ -40,7 +40,7 @@ function Blocks() {
           </Link>
         </div>
         <div className="div3">
-          <Link href="/">
+          <Link href="../generalMap">
             <a className={categoryClass + " blocks_three_color"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

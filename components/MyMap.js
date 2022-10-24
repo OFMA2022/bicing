@@ -18,6 +18,9 @@ function Map({
     }
     setActiveMarker(marker);
   };
+
+  //console.log("ho my godness", direction[0].address);
+
   return (
     <GoogleMap
       zoom={zoom}
@@ -25,18 +28,21 @@ function Map({
       mapContainerClassName={mapContainerClassName}
     >
       {typeMarker == "all" ? (
-        stations.stations.map((station) => (
+        stations.map((station, i) => (
           <Marker
-            key={station.id}
-            position={direction}
-            onClick={() => handleActiveMarker(station.id)}
-          />
-          /*} {activeMarker === institution.id ? (
+            key={station.station_id}
+            position={direction[i].address}
+            onClick={() => handleActiveMarker(station.station_id)}
+          >
+            {activeMarker == station.station_id ? (
               <InfoWindow onCloseClick={() => setActiveMarker(null)}>
-                <InfoWindowCard institution={institution} />
+                <InfoWindowMapCard
+                  stations={station}
+                  stations_status={stations_status[i]}
+                />
               </InfoWindow>
             ) : null}
-           </Marker>*/
+          </Marker>
         ))
       ) : (
         <Marker
