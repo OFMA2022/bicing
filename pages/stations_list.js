@@ -14,24 +14,24 @@ const API_URL_DATA_INFO =
 const API_URL_DATA_STATUS =
   "https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/en/station_status";
 
-let receivedDataStatus = [];
+//let receivedDataStatus = [];
 
 function list(stations, address) {
-  /* Array of useState for saving the rest of details in the second file of json */
-  const [value, setValues] = useState([]);
+  /* DECLARED TO BE ABLE TO SAVE DATA COMPARED OF STATION_ID */
+  const [stations_status, setStations_status] = useState([]);
 
-  /* I declared this for getting the rest of details in the second json file by comparing them with 'station_id' of the first json file */
+  /* I DECALRED THIS FOR GETTING THE REST OF DETAILS IN THE SECOND JSON FILE BY COMPARING THEM WITH 'STATION_ID'OF THE FIRST JSON FILE */
   data_status.data.stations.filter((station_status) => {
     stations.stations.map((station) => {
       if (station.station_id == station_status.station_id) {
         //console.log("stations statussss baby", station_status);
         //console.log("stations infoo baby", station);
-        value.push(station_status);
+        stations_status.push(station_status);
       }
     });
   });
 
-  //console.log("Stations Status BY value", value);
+  //console.log("Stations Status BY stations_status", stations_status);
   //console.log("Stations info", stations.stations);
 
   /* database stuff */
@@ -59,11 +59,11 @@ function list(stations, address) {
               estacion_de_carga={
                 station.is_charging_station == true ? "SI" : "NO"
               }
-              num_bicis_disponibles={value[i].num_bikes_available}
-              mecanica={value[i].num_bikes_available_types.mechanical}
-              ebike={value[i].num_bikes_available_types.ebike}
-              muelles_bicis_disponibles={value[i].num_docks_available}
-              estado={value[i].status == "IN_SERVICE" ? "SI" : "NO"}
+              num_bicis_disponibles={stations_status[i].num_bikes_available}
+              mecanica={stations_status[i].num_bikes_available_types.mechanical}
+              ebike={stations_status[i].num_bikes_available_types.ebike}
+              muelles_bicis_disponibles={stations_status[i].num_docks_available}
+              estado={stations_status[i].status == "IN_SERVICE" ? "SI" : "NO"}
               station_id={station.station_id}
             />
           ))}
@@ -76,6 +76,7 @@ function list(stations, address) {
         </div>
       )}
 
+      {/* SCROLL UP BUTTON */}
       <div className="mr-auto">
         <ScrollUp_Buton />
       </div>
@@ -84,6 +85,9 @@ function list(stations, address) {
 }
 export default list;
 
+{
+  /* A FUNCTION TO CALCULATE THE DISTANCE */
+}
 function getDistance(x1, y1, x2, y2) {
   let y = x2 - x1;
   let x = y2 - y1;
@@ -91,10 +95,12 @@ function getDistance(x1, y1, x2, y2) {
   return Math.sqrt(x * x + y * y);
 }
 
-//Received by props the direction that the user put in.
+{
+  /* RECEIVED BY PROPS (query). THE DIRECTION INTRODUCED BY THE USER */
+}
 export const getServerSideProps = async ({ query }) => {
   /* FETCHING DATA FROM EXTERNAL LINK DATABASE */
-  const stationDataInfo = (API) =>
+  /*const stationDataInfo = (API) =>
     fetch(API)
       .then((response) => response.json())
       .catch((error) => {
@@ -105,17 +111,29 @@ export const getServerSideProps = async ({ query }) => {
       });
 
   const receivedDataInfo = await stationDataInfo(API_URL_DATA_INFO);
-  receivedDataStatus = await stationDataInfo(API_URL_DATA_STATUS);
+  receivedDataStatus = await stationDataInfo(API_URL_DATA_STATUS);*/
 
   const MAX_DISTANCE = 1500;
-  const { lat, lon, route_address, street_number } = query; //Saved the direction in 'const' declared
-  const address = route_address + " " + street_number; //Joining the address_route and the street_number to form an completely Full Adderess
-  // search the related stations
+
+  {
+    /* SAVED THE DIRECTION ENTERED BY PROPS (query) INTO THE CONST DECLARED */
+    /* SOMEHOW WE'VE GOT THE ADDRES SEPARETELY */
+  }
+  const { lat, lon, route_address, street_number } = query;
+  {
+    /* JOINING THE address_route AND THE street_number TO FORM AN COMPLETELY FULL ADDRESS*/
+  }
+  const address = route_address + " " + street_number;
+  {
+    /* SEARCH THE RELATED STATIONS */
+  }
   const stations = data_information.data.stations.filter((station) => {
     if (!lat || !lon) return station;
 
     const distance = getDistance(+lat, +lon, station.lat, station.lon) * 100000;
-    // Get the nearest paths
+    {
+      /* GET THE NEAREST PATHS */
+    }
     if (distance < MAX_DISTANCE) return station;
   });
 

@@ -14,7 +14,7 @@ function InfoWindowMapCard({ stations, stations_status }) {
       <h2 className="uppercase text-lg sm:text-3xl font-bold">
         {stations.address}
       </h2>
-      <div className="w-full p-4 flex justify-items-start justify-center items-center gap-10 sm:gap-28">
+      <div className="w-full p-4 flex justify-items-start justify-center items-center gap-6 sm:gap-28">
         <div>
           {/* BIKES */}
           <svg

@@ -2,6 +2,10 @@ import { useState } from "react";
 import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 import InfoWindowMapCard from "./InfoWindowMapCard";
 
+{
+  /* MAP: DEPENDS ON 'typeMarker' THE MAP FUNCTION RETURN ALL MARKERS OR A SINGLR MARKER */
+}
+
 function Map({
   typeMarker,
   direction,
@@ -18,8 +22,6 @@ function Map({
     }
     setActiveMarker(marker);
   };
-
-  //console.log("ho my godness", direction[0].address);
 
   return (
     <GoogleMap

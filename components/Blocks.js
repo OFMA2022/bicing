@@ -9,6 +9,7 @@ function Blocks() {
   return (
     <div>
       <div className="parent">
+        {/* BICICLESTAS BLOCK */}
         <div className="div1">
           <Link href="/">
             <a className={categoryClass + " blocks_one_color"}>
@@ -24,6 +25,7 @@ function Blocks() {
             </a>
           </Link>
         </div>
+        {/* STATIONS BLOCK */}
         <div className="div2">
           <Link href="../stations_list">
             <a className={categoryClass + " blocks_two_color"}>
@@ -39,6 +41,7 @@ function Blocks() {
             </a>
           </Link>
         </div>
+        {/* MAP BLOCK */}
         <div className="div3">
           <Link href="../generalMap">
             <a className={categoryClass + " blocks_three_color"}>
@@ -54,6 +57,7 @@ function Blocks() {
             </a>
           </Link>
         </div>
+        {/* INFO BLOCK */}
         <div className="div4">
           <Link href="/">
             <a className={categoryClass + " blocks_four_color"}>

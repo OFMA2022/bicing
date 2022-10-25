@@ -1,7 +1,9 @@
 import { IoIosArrowBack } from "react-icons/io";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
+{
+  /* RETURN THE BACKWARD BUTTON */
+}
 function PreviousPage_Button() {
   const router = useRouter();
   return (

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Search from "../Search.js";
 import Button from "../Button.js";
-import NavBarMenuHamburger from "./NavBarMenuHamburger.js";
 import { useState } from "react";
 
 function NavBar() {

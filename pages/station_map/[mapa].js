@@ -8,19 +8,23 @@ import Description_Map from "../../components/Description_Map";
 import { useState } from "react";
 
 function Mapa({ stationData }) {
-  const [value, setValues] = useState([]);
+  /* DECLARED TO BE ABLE TO SAVE DATA COMPARED OF STATION_ID */
+  const [stations_status, setStations_status] = useState([]);
 
+  /* GET THE LATITUDE AND LONGITUDE IN A SINGLE CONST */
   const LatLon = {
     direction: { lat: stationData.lat, lng: stationData.lon },
   };
 
+  /* NECESSARY TO BE ABLE TO LOAD THE MAP */
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
   });
 
+  /* I DECALRED THIS FOR GETTING THE REST OF DETAILS IN THE SECOND JSON FILE BY COMPARING THEM WITH 'STATION_ID'OF THE FIRST JSON FILE */
   data_status.data.stations.filter((station_status) => {
     if (stationData.station_id == station_status.station_id) {
-      value.push(station_status);
+      stations_status.push(station_status);
     }
   });
 
@@ -49,7 +53,7 @@ function Mapa({ stationData }) {
             center={LatLon.direction}
             mapContainerClassName="map-container-station"
             stations={stationData}
-            stations_status={value[0]}
+            stations_status={stations_status[0]}
           />
         ) : (
           <div className="text-5xl text-center mt-40">
@@ -89,13 +93,21 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
+  {
+    /* GET THE station_id BY THE PARAMS */
+  }
   const station_id = params.mapa;
 
-  //const url = API_URL_SLUG(slug);
-
+  {
+    /* OBTAIN FULL DATA FROM JSON FILE BY COMPARING WITH station_id */
+  }
   let getStation = data_information.data.stations.find(
     (station) => station.station_id == station_id
   );
+
+  {
+    /* CONVERTERS: DATA TO STRING - STRING TO JSON  */
+  }
   let jsonString = JSON.stringify(getStation);
   const stationData = JSON.parse(jsonString);
 

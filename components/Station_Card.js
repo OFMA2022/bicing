@@ -5,7 +5,6 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import Link from "next/link";
-import { color } from "@mui/system";
 import ConditionFile from "./ConditionFile";
 import Station_Card_Button from "./Station_Card_Buttons";
 
@@ -22,6 +21,7 @@ export default function Station_Card({
 }) {
   return (
     <Card sx={{ maxWidth: 650 }}>
+      {/* IMAGE */}
       <Link href={`/station_map/${station_id}`}>
         <a>
           <Image

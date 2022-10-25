@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+{
+  /* RETURN A div WITH SOME STRINGS AND A button */
+}
 function Description_Bloc() {
   return (
     <div>

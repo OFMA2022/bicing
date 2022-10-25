@@ -3,24 +3,28 @@ import data_status from "../data_status.json";
 import MyMap from "../components/MyMap";
 import NavBar from "../components/NavBar/NavBar";
 import Description_Map from "../components/Description_Map";
-import { useLoadScript, LoadScript } from "@react-google-maps/api";
+import { useLoadScript } from "@react-google-maps/api";
 import { useState, useMemo } from "react";
 import PreviousPage_Button from "../components/PreviousPage_Button";
 
 function generalMap({ stations }) {
-  const [value, setValues] = useState([]);
+  /* DECLARED TO SAVE ARRAY DATA */
+  const [stations_status, setStations_status] = useState([]);
   const [directions, setDirections] = useState([]);
 
+  /* CENTER OF BARCELONA */
   const center = useMemo(() => ({ lat: 41.3986526, lng: 2.1613738 }), []);
 
+  /* NECESSARY TO BE ABLE TO LOAD THE MAP */
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
   });
 
+  /* SAVING DATA FROM ANOTHER JSON BY if CONDITION AND DIRECTIONS IN A SINGLE ARRAY CONST */
   data_status.data.stations.filter((station_status) => {
     stations.data.stations.map((station) => {
       if (station.station_id == station_status.station_id) {
-        value.push(station_status);
+        stations_status.push(station_status);
         directions.push({ address: { lat: station.lat, lng: station.lon } });
       }
     });
@@ -47,11 +51,11 @@ function generalMap({ stations }) {
           <MyMap
             typeMarker="all"
             direction={directions}
-            zoom={14}
+            zoom={13}
             center={center}
             mapContainerClassName="map-container"
             stations={stations.data.stations}
-            stations_status={value}
+            stations_status={stations_status}
           />
         ) : (
           <div className="text-5xl text-center mt-40">

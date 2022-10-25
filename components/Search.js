@@ -10,6 +10,10 @@ const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
 
 function Search() {
   const router = useRouter();
+
+  {
+    /* DECLARED TO BE ABLE TO SAVE THE CUSTOM ADDRESS. SUCH AS (LAT, LON, STREET_NUMBRE ETC..)  */
+  }
   const [direction, setDirection] = useState();
 
   {

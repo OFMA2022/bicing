@@ -1,3 +1,6 @@
+{
+  /* RETURN SOMES divs THAT CONTAINS STRING */
+}
 function Description_Map() {
   return (
     <div className="text-center mt-5">
