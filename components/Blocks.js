@@ -25,6 +25,7 @@ function Blocks() {
             </a>
           </Link>
         </div>
+
         {/* STATIONS BLOCK */}
         <div className="div2">
           <Link href="../stations_list">
@@ -41,6 +42,7 @@ function Blocks() {
             </a>
           </Link>
         </div>
+
         {/* MAP BLOCK */}
         <div className="div3">
           <Link href="../generalMap">
@@ -57,6 +59,7 @@ function Blocks() {
             </a>
           </Link>
         </div>
+
         {/* INFO BLOCK */}
         <div className="div4">
           <Link href="/">

@@ -1,13 +1,16 @@
-import NavBar from "../../components/NavBar/NavBar";
-import MyMap from "../../components/MyMap";
-import { useLoadScript } from "@react-google-maps/api";
-import data_information from "../../data_information.json";
-import data_status from "../../data_status.json";
 import PreviousPage_Button from "../../components/PreviousPage_Button";
 import Description_Map from "../../components/Description_Map";
+import { useLoadScript } from "@react-google-maps/api";
 import { useState } from "react";
+import Search_Map from "../../components/Search_Map";
+import NavBar from "../../components/NavBar/NavBar";
 
-function Mapa({ stationData }) {
+/* EXTERNAL DATA API : DATA INFORMATION */
+const API_URL_DATA_INFO = process.env.API_URL_DATA_INFO;
+/* EXTERNAL DATA API : DATA STATUS */
+const API_URL_DATA_STATUS = process.env.API_URL_DATA_STATUS;
+
+function Mapa({ stationData, data_status }) {
   /* DECLARED TO BE ABLE TO SAVE DATA COMPARED OF STATION_ID */
   const [stations_status, setStations_status] = useState([]);
 
@@ -21,7 +24,7 @@ function Mapa({ stationData }) {
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
   });
 
-  /* I DECALRED THIS FOR GETTING THE REST OF DETAILS IN THE SECOND JSON FILE BY COMPARING THEM WITH 'STATION_ID'OF THE FIRST JSON FILE */
+  /* I DECALRED THIS FOR GETTING THE REST OF DETAILS IN THE SECOND API URL BY COMPARING THEM WITH 'STATION_ID'OF THE FIRST API URL */
   data_status.data.stations.filter((station_status) => {
     if (stationData.station_id == station_status.station_id) {
       stations_status.push(station_status);
@@ -45,21 +48,17 @@ function Mapa({ stationData }) {
 
       <div className="flex items-center justify-center">
         {/* MAP */}
-        {!loadError && isLoaded != "" ? (
-          <MyMap
-            typeMarker="unique"
-            direction={LatLon.direction}
-            zoom={20}
-            center={LatLon.direction}
-            mapContainerClassName="map-container-station"
-            stations={stationData}
-            stations_status={stations_status[0]}
-          />
-        ) : (
-          <div className="text-5xl text-center mt-40">
-            Por favor actualice la página para recargar la mapa.
-          </div>
-        )}
+        <Search_Map
+          loadError={loadError}
+          isLoaded={isLoaded}
+          typeMarker="unique"
+          directions={LatLon.direction}
+          zoom={20}
+          center={LatLon.direction}
+          mapContainerClassName="map-container-station"
+          stations={stationData}
+          stations_status={stations_status[0]}
+        />
       </div>
     </div>
   );
@@ -67,22 +66,11 @@ function Mapa({ stationData }) {
 export default Mapa;
 
 export const getStaticPaths = async () => {
-  {
-    /* FETCH METHOD: IN CASE WE ARE GETTING DATA FROM OUR DATABASE (OUR BACK-END)*/
-  }
-  /*const getInstitutions = () =>
-    fetch(API_URL)
-      .then((response) => response.json())
-      .catch((error) => {
-        console.log("Error", error);
-      })
-      .then((data) => {
-        return data.data;
-      });
+  /* FETCHING DATA FROM EXTERNAL API */
+  const res = await fetch(API_URL_DATA_INFO);
+  const data_info = await res.json();
 
-  //PART OF GETTING DATA FROM OUR DATABASE: OBTAINING/SAVING THE DATA TO A CONST.
-  const receivedInstitutions = await getInstitutions();*/
-  const stationsUrl = data_information.data.stations.map(
+  const stationsUrl = data_info.data.stations.map(
     (station) => `/station_map/${station.station_id}`
   );
 
@@ -98,10 +86,14 @@ export const getStaticProps = async ({ params }) => {
   }
   const station_id = params.mapa;
 
+  /* FETCHING DATA FROM EXTERNAL API */
+  const res = await fetch(API_URL_DATA_INFO);
+  const data_info = await res.json();
+
   {
     /* OBTAIN FULL DATA FROM JSON FILE BY COMPARING WITH station_id */
   }
-  let getStation = data_information.data.stations.find(
+  let getStation = data_info.data.stations.find(
     (station) => station.station_id == station_id
   );
 
@@ -111,27 +103,20 @@ export const getStaticProps = async ({ params }) => {
   let jsonString = JSON.stringify(getStation);
   const stationData = JSON.parse(jsonString);
 
-  {
-    /* FETCH METHOD: IN CASE WE ARE GETTING DATA FROM OUR DATABASE (OUR BACK-END)*/
-  }
-  /*const getInstitutionData = () =>
-    fetch(url)
-      .then((response) => response.json())
-      .catch((error) => {
-        console.log("Error", error);
-      })
-      .then((data) => data.data);
-
-  const institutionData = await getInstitutionData();*/
-
   if (!stationData) {
     return {
       notFound: true,
     };
   }
+
+  /* FETCHING DATA FROM EXTERNAL API */
+  const res_status = await fetch(API_URL_DATA_STATUS);
+  const data_status = await res_status.json();
+
   return {
     props: {
       stationData,
+      data_status,
     },
   };
 };

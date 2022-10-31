@@ -1,41 +1,26 @@
-import data_information from "../data_information.json";
-import data_status from "../data_status.json";
-import NavBar from "../components/NavBar/NavBar";
+import PreviousPage_Button from "../components/PreviousPage_Button";
+import ScrollUp_Buton from "../components/ScrollUp_Buton";
 import Station_Card from "../components/Station_Card";
 import { useState } from "react";
-import ScrollUp_Buton from "../components/ScrollUp_Buton";
-import PreviousPage_Button from "../components/PreviousPage_Button";
+import NavBar from "../components/NavBar/NavBar";
 
-/* EXTERNAL DATA JSON LINK : DATA INFORMATION (FIRST JSON FILE) */
-const API_URL_DATA_INFO =
-  "https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/en/station_information";
+/* EXTERNAL DATA API : DATA INFORMATION */
+const API_URL_DATA_INFO = process.env.API_URL_DATA_INFO;
+/* EXTERNAL DATA API : DATA STATUS */
+const API_URL_DATA_STATUS = process.env.API_URL_DATA_STATUS;
 
-/* EXTERNAL DATA JSON LINK : DATA STATUS (SECOND JSON FILE) */
-const API_URL_DATA_STATUS =
-  "https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/en/station_status";
-
-//let receivedDataStatus = [];
-
-function list(stations, address) {
+function list(stations) {
   /* DECLARED TO BE ABLE TO SAVE DATA COMPARED OF STATION_ID */
   const [stations_status, setStations_status] = useState([]);
 
-  /* I DECALRED THIS FOR GETTING THE REST OF DETAILS IN THE SECOND JSON FILE BY COMPARING THEM WITH 'STATION_ID'OF THE FIRST JSON FILE */
-  data_status.data.stations.filter((station_status) => {
+  /* I DECALRED THIS FOR GETTING THE REST OF DETAILS IN THE SECOND API URL BY COMPARING THEM WITH 'STATION_ID'OF THE FIRST API URL */
+  stations.data_status.data.stations.filter((station_status) => {
     stations.stations.map((station) => {
       if (station.station_id == station_status.station_id) {
-        //console.log("stations statussss baby", station_status);
-        //console.log("stations infoo baby", station);
         stations_status.push(station_status);
       }
     });
   });
-
-  //console.log("Stations Status BY stations_status", stations_status);
-  //console.log("Stations info", stations.stations);
-
-  /* database stuff */
-  //console.log("receeeeebaaaa", receivedDataStatus);
 
   return (
     <div className="max-w-[1400px] ml-auto mr-auto flex flex-col justify-center items-center">
@@ -99,20 +84,11 @@ function getDistance(x1, y1, x2, y2) {
   /* RECEIVED BY PROPS (query). THE DIRECTION INTRODUCED BY THE USER */
 }
 export const getServerSideProps = async ({ query }) => {
-  /* FETCHING DATA FROM EXTERNAL LINK DATABASE */
-  /*const stationDataInfo = (API) =>
-    fetch(API)
-      .then((response) => response.json())
-      .catch((error) => {
-        console.log("Error", error);
-      })
-      .then((data) => {
-        return data.data;
-      });
+  /* FETCHING DATA FROM EXTERNAL API */
+  const res = await fetch(API_URL_DATA_INFO);
+  const data_info = await res.json();
 
-  const receivedDataInfo = await stationDataInfo(API_URL_DATA_INFO);
-  receivedDataStatus = await stationDataInfo(API_URL_DATA_STATUS);*/
-
+  /* TO GET STATIONS AROUND THIS DISTANCE */
   const MAX_DISTANCE = 1500;
 
   {
@@ -127,7 +103,7 @@ export const getServerSideProps = async ({ query }) => {
   {
     /* SEARCH THE RELATED STATIONS */
   }
-  const stations = data_information.data.stations.filter((station) => {
+  const stations = data_info.data.stations.filter((station) => {
     if (!lat || !lon) return station;
 
     const distance = getDistance(+lat, +lon, station.lat, station.lon) * 100000;
@@ -137,10 +113,15 @@ export const getServerSideProps = async ({ query }) => {
     if (distance < MAX_DISTANCE) return station;
   });
 
+  /* FETCHING DATA FROM EXTERNAL API */
+  const res_status = await fetch(API_URL_DATA_STATUS);
+  const data_status = await res_status.json();
+
   return {
     props: {
       stations,
       address,
+      data_status,
     },
   };
 };
