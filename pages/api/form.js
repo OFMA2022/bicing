@@ -1,18 +1,24 @@
 import { useState } from "react";
+import myFetch from "../../components/myFetch";
 
 /* EXTERNAL DATA API : DATA INFORMATION */
 const API_URL_DATA_INFO = process.env.API_URL_DATA_INFO;
 /* EXTERNAL DATA API : DATA STATUS */
 const API_URL_DATA_STATUS = process.env.API_URL_DATA_STATUS;
 
-//function form({ data_info, data_status }) {
+/*function form(req, res) {*/
 /*const [stations_info, setStations_info] = useState([]);
   const [stations_status, setStations_status] = useState([]);*/
 
-/*const getHandler = handler();
+//const body = req.body;
 
-  console.log("my handler shit", getHandler);
-}
+//console.log("THIS MY BODY: ", body.num_estacion);
+
+/*const { data_info, error } = myFetch(API_URL_DATA_INFO);
+
+  console.log("data info", data_info);*/
+// console.log("my handler shit", stationNumber);
+/*}
 export default form;*/
 
 export default function handler(req, res) {
@@ -39,19 +45,23 @@ export default function handler(req, res) {
     console.log("data info", data_info);
   };*/
 
+  /*const { data_info } = myFetch(API_URL_DATA_INFO);*/
+
+  //console.log("data info", data_info);
+
   //console.log("STATIONS NORMALES", stations);
   //console.log("STATIONS DE STATUS", stationsStatus);
 
   // Guard clause checks for first and last name,
   // and returns early if they are not found
-  if (!body.num_estacion) {
+  /*if (!body.num_estacion) {
     // Sends a HTTP bad request error code
     return res.status(400).json({ data: "Station Number not found" });
-  }
+  }*/
 
   // Found the name.
   // Sends a HTTP success code
-  //res.status(200).json({ data: `${body.num_estacion}` });
+  res.status(200).json({ data: `${body.num_estacion}` });
   return body.num_estacion;
 }
 

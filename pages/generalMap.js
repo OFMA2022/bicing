@@ -4,6 +4,7 @@ import { useLoadScript } from "@react-google-maps/api";
 import Description_Map from "../components/Description_Map";
 import classnames from "classnames";
 import Search_Map from "../components/Search_Map";
+import MyMap from "../components/MyMap";
 import Button from "../components/Button";
 import NavBar from "../components/NavBar/NavBar";
 
@@ -36,9 +37,9 @@ function generalMap({ stations, data_status }) {
   });
 
   /* DETAILS FOR GENERAL MAP*/
-  let typeMarker = "all";
+  /*let typeMarker = "all";
   let zoom = 13;
-  const mapContainerClassName = classnames("map-container");
+  const mapContainerClassName = classnames("map-container");*/
 
   return (
     <div className="max-w-[1400px] ml-auto mr-auto items-center">
@@ -59,7 +60,7 @@ function generalMap({ stations, data_status }) {
 
       <div>
         {/* FORM */}
-        <form
+        {/*         <form
           action="/api/form"
           method="post"
           className="flex justify-center items-center gap-4 mb-5"
@@ -79,22 +80,26 @@ function generalMap({ stations, data_status }) {
               Buscar
             </Button>
           </div>
-        </form>
+        </form> */}
       </div>
 
       <div className="w-full flex items-center justify-center">
         {/* MAP */}
-        <Search_Map
-          loadError={loadError}
-          isLoaded={isLoaded}
-          typeMarker={typeMarker}
-          directions={directions}
-          zoom={zoom}
-          center={center}
-          mapContainerClassName={mapContainerClassName}
-          stations={stations.data.stations}
-          stations_status={stations_status}
-        />
+        {!loadError && isLoaded != "" ? (
+          <MyMap
+            typeMarker="all"
+            direction={directions}
+            zoom={13}
+            center={center}
+            mapContainerClassName="map-container"
+            stations={stations.data.stations}
+            stations_status={stations_status}
+          />
+        ) : (
+          <div className="text-5xl text-center mt-40">
+            Por favor actualice la página para recargar la mapa.
+          </div>
+        )}
       </div>
     </div>
   );
